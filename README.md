@@ -1,12 +1,14 @@
-save-pixels
-===========
+#### This is an updated version of [save-pixels](https://github.com/scijs/save-pixels) which patches the [CVE-2020-8175](https://github.com/advisories/GHSA-w7q9-p3jq-fmhm) security issue. At the time of creation, every file is the same as the ones from the original repository, excluding the package.json.
+
+# save-pixels-updated
+##### The following is from the [save-pixels](https://github.com/scijs/save-pixels) GitHub page. As mentioned before, this repository has no breaking changes and is nearly the exact same as the original repository.
 Saves an ndarray to an image.
 
 Example
 =======
 ```javascript
 var zeros = require("zeros")
-var savePixels = require("save-pixels")
+var savePixels = require("save-pixels-updated")
 
 //Create an image
 var x = zeros([32, 32])
@@ -23,9 +25,9 @@ This writes the following image to stdout:
 Install
 =======
 
-    npm install save-pixels
+    npm install save-pixels-updated
 
-### `require("save-pixels")(array, type[, options])`
+### `require("save-pixels-updated")(array, type[, options])`
 Saves an ndarray as an image with the given format
 
 * `array` is an `ndarray` of pixels.  Assumes that shape is `[width, height, channels]`
@@ -45,5 +47,6 @@ Saves an ndarray as an image with the given format
 
 **Returns** A stream that you can pipe to serialize the result, or a canvas element if the `type` is `"canvas"`.
 
-# Credits
-(c) 2013 Mikola Lysenko. MIT License
+Credits
+=======
+Original code from [save-pixels](https://github.com/scijs/save-pixels), updated by [sysollie](https://github.com/sysollie) to fix the [CVE-2020-8175](https://github.com/advisories/GHSA-w7q9-p3jq-fmhm) security issue. Code used and relicensed under and in accordance with the MIT license ([original](https://github.com/scijs/save-pixels/blob/master/LICENSE) | [new](https://github.com/sysollie/save-pixels-updated/blob/main/LICENSE)).
